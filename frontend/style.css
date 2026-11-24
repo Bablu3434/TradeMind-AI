@@ -1,0 +1,289 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b1020;
+    color: #ffffff;
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 245px;
+    background: #11182b;
+    padding: 30px 20px;
+    position: fixed;
+    height: 100vh;
+    border-right: 1px solid #26314b;
+}
+
+.sidebar h2 {
+    font-size: 23px;
+    margin-bottom: 45px;
+}
+
+.sidebar h2 span {
+    color: #00d6a0;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar nav a {
+    color: #aab5cc;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #20364a;
+    color: #00e6aa;
+}
+
+.sidebar-bottom {
+    position: absolute;
+    bottom: 30px;
+    color: #9aa7bd;
+    line-height: 1.8;
+}
+
+.main-content {
+    margin-left: 245px;
+    padding: 35px;
+    width: calc(100% - 245px);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    gap: 15px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+header p, .muted {
+    color: #9ba9c1;
+}
+
+.status {
+    background: #15372f;
+    padding: 12px 17px;
+    border-radius: 30px;
+    color: #00e6aa;
+    font-size: 13px;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #00e6aa;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.welcome {
+    background: linear-gradient(120deg, #123a3b, #172447);
+    padding: 35px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.welcome p {
+    color: #c0d4e2;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.card, .market-card, .analysis-box {
+    background: #141e33;
+    border: 1px solid #283650;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.card p {
+    color: #9ba9c1;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    color: #00e6aa;
+    font-size: 25px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.market-card h2 {
+    margin-bottom: 15px;
+}
+
+.market-card p {
+    color: #9ba9c1;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #00bd91;
+    color: #061a18;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #00e6aa;
+    transform: translateY(-2px);
+}
+
+button.secondary {
+    background: #354a68;
+    color: white;
+    margin-left: 8px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active-page {
+    display: block;
+}
+
+.page > h2 {
+    margin-bottom: 12px;
+}
+
+.analysis-box {
+    margin-top: 25px;
+    max-width: 700px;
+}
+
+label {
+    display: block;
+    margin: 20px 0 9px;
+    color: #b8c5d9;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    background: #0b1428;
+    border: 1px solid #34425d;
+    color: white;
+    border-radius: 7px;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #00d6a0;
+}
+
+.result {
+    margin-top: 22px;
+    padding: 15px;
+    border-radius: 8px;
+    color: #d7e8e8;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+@media(max-width: 850px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+    body {
+        display: block;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 20px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar nav a {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main-content {
+        margin: 0;
+        width: 100%;
+        padding: 18px;
+    }
+
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

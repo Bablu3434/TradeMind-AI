@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeMind AI | Trading Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>Trade<span>Mind</span> AI</h2>
+
+        <nav>
+            <a class="active" href="#" data-section="dashboard">Dashboard</a>
+            <a href="#" data-section="stock">Stock Market</a>
+            <a href="#" data-section="color">Color Trading</a>
+            <a href="#" data-section="history">Prediction History</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>AI Trading Intelligence</p>
+            <small>Version 1.0.0</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header>
+            <div>
+                <h1>Trading Dashboard</h1>
+                <p>Analyze markets with intelligent tools.</p>
+            </div>
+            <div class="status">
+                <span class="dot"></span> System Online
+            </div>
+        </header>
+
+        <section id="dashboard" class="page active-page">
+            <div class="welcome">
+                <h2>Welcome to TradeMind AI 🚀</h2>
+                <p>Your all-in-one trading analysis platform.</p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <p>Trading Modules</p>
+                    <h2>02</h2>
+                </div>
+                <div class="card">
+                    <p>Analysis Engine</p>
+                    <h2>Ready</h2>
+                </div>
+                <div class="card">
+                    <p>Live Data</p>
+                    <h2>Not Connected</h2>
+                </div>
+            </div>
+
+            <h2 class="section-title">Choose Your Market</h2>
+
+            <div class="market-grid">
+                <div class="market-card">
+                    <h2>📈 Stock Market AI</h2>
+                    <p>Analyze stocks, indicators and market trends.</p>
+                    <button onclick="showPage('stock')">Open Stock Analysis</button>
+                </div>
+
+                <div class="market-card">
+                    <h2>🎯 Color Trading AI</h2>
+                    <p>Analyze historical color and number results.</p>
+                    <button onclick="showPage('color')">Open Color Analysis</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="stock" class="page">
+            <h2>Stock Market Analysis</h2>
+            <p class="muted">Enter a stock symbol to prepare an analysis request.</p>
+
+            <div class="analysis-box">
+                <label>Stock Symbol</label>
+                <input id="stockSymbol" placeholder="Example: RELIANCE, TCS, INFY">
+
+                <label>Market</label>
+                <select id="stockMarket">
+                    <option value="NSE">NSE India</option>
+                    <option value="BSE">BSE India</option>
+                    <option value="NASDAQ">NASDAQ</option>
+                </select>
+
+                <button onclick="analyzeStock()">Analyze Stock</button>
+                <div id="stockResult" class="result"></div>
+            </div>
+        </section>
+
+        <section id="color" class="page">
+            <h2>Color Trading Analysis</h2>
+            <p class="muted">Enter historical results for statistical analysis.</p>
+
+            <div class="analysis-box">
+                <label>Platform</label>
+                <select id="platform">
+                    <option>OK Win</option>
+                    <option>Tiranga</option>
+                    <option>Other</option>
+                </select>
+
+                <label>Result Color</label>
+                <select id="colorInput">
+                    <option value="Red">Red</option>
+                    <option value="Green">Green</option>
+                    <option value="Violet">Violet</option>
+                </select>
+
+                <label>Result Number (if available)</label>
+                <input id="colorNumber" type="number" min="0" max="9" placeholder="0-9">
+
+                <button onclick="addColorResult()">Add Historical Result</button>
+                <button class="secondary" onclick="analyzeColor()">Analyze History</button>
+
+                <div id="colorResult" class="result"></div>
+            </div>
+        </section>
+
+        <section id="history" class="page">
+            <h2>Prediction & Analysis History</h2>
+            <p class="muted">Your recent analysis records will appear here.</p>
+            <div id="historyList" class="analysis-box">
+                No analysis available yet.
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
